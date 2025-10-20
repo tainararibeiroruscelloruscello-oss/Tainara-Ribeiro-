@@ -1,0 +1,66 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Atividade01 {
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US); // para ponto decimal como ponto
+        Scanner sc = new Scanner(System.in);
+
+        double[] notas = new double[8];
+        System.out.println("Digite as 8 notas (aperte Enter após cada uma):");
+        for (int i = 0; i < 8; i++) {
+            System.out.print((i+1) + "ª nota: ");
+            notas[i] = sc.nextDouble();
+        }
+
+        // calcular médias bimestrais (cada bimestre = média de 2 notas)
+        double b1 = (notas[0] + notas[1]) / 2.0;
+        double b2 = (notas[2] + notas[3]) / 2.0;
+        double b3 = (notas[4] + notas[5]) / 2.0;
+        double b4 = (notas[6] + notas[7]) / 2.0;
+
+        // médias semestrais (cada 
+        semestre = média de 2 bimestres)
+        double s1 = (b1 + b2) / 2.0;
+        double s2 = (b3 + b4) / 2.0;
+
+        // média final (média dos dois semestres)
+        double mediaFinal = (s1 + s2) / 2.0;
+
+        System.out.println();
+        System.out.printf("1º Bimestre: %.1f%n", b1);
+        System.out.printf("2º Bimestre: %.1f%n", b2);
+        System.out.printf("1º Semestre: %.1f%n", s1);
+        System.out.println("---------------------------");
+        System.out.printf("3º Bimestre: %.1f%n", b3);
+        System.out.printf("4º Bimestre: %.1f%n", b4);
+        System.out.printf("2º Semestre: %.1f%n", s2);
+        System.out.println("---------------------------");
+        System.out.printf("Média Final: %.1f%n", mediaFinal);
+
+        sc.close();
+    }
+}
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Atividade02 {
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite a temperatura em Celsius (°C): ");
+        double c = sc.nextDouble();
+
+        double f = (c * 9.0 / 5.0) + 32.0;
+        double k = c + 273.15;
+
+        System.out.println();
+        System.out.printf("Temperatura em Celsius: %.1f °C%n", c);
+        System.out.printf("Temperatura em Fahrenheit: %.1f °F%n", f);
+        System.out.printf("Temperatura em Kelvin: %.2f K%n", k);
+
+        sc.close();
+    }
+}
